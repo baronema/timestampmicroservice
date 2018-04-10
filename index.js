@@ -1,5 +1,5 @@
 var express = require('express'); // We import ExpressJS
-var path = require('path');
+var path = require('path');	// File and Directory Utility
  
 var app = express(); // This is how we initialize an express app
 var PORT = process.env.PORT || 3000;     // We set the port that the application will use
@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname,'/public')));
 
 // When a GET request is made to the root path: '/' reply with index UI
 app.get('/', function(request, response) {
-  response('Hello World');
+  response.sendFile(path.join(__dirname+'/index.html'));
 });
 
 app.get('/:timestamp', function(request, response) {
