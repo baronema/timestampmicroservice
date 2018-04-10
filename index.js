@@ -9,6 +9,7 @@ app.use(express.static(path.join(__dirname,'/public')));
 
 // When a GET request is made to the root path: '/' reply with index UI
 app.get('/', function(request, response) {
+	console.log("the root is not working!);
   response.sendFile(_dirName'/public/index.html'));
 });
 
