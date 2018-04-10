@@ -1,11 +1,12 @@
 var express = require('express'); // We import ExpressJS
+var path = require('path');
  
 var app = express(); // This is how we initialize an express app
 var PORT = process.env.PORT || 3000;     // We set the port that the application will use
  
 // When a GET request is made to the root path: '/' reply with Hello World
 app.get('/', function(request, response) {
-  response.send('Hello World');
+  res.sendFile(path.join(__dirname,'/public/index.html'));
 });
 
 app.get('/:timestamp', function(request, response) {
