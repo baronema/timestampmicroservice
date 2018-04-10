@@ -3,10 +3,13 @@ var path = require('path');
  
 var app = express(); // This is how we initialize an express app
 var PORT = process.env.PORT || 3000;     // We set the port that the application will use
- 
+
+//static files
+app.use(express.static(path.join(__dirname,'/public')));
+
 // When a GET request is made to the root path: '/' reply with index UI
 app.get('/', function(request, response) {
-  response.sendFile(path.join(__dirname,'/public/index.html'));
+  response.sendFile(_dirName'/public/index.html'));
 });
 
 app.get('/:timestamp', function(request, response) {
