@@ -4,9 +4,9 @@ var path = require('path');
 var app = express(); // This is how we initialize an express app
 var PORT = process.env.PORT || 3000;     // We set the port that the application will use
  
-// When a GET request is made to the root path: '/' reply with Hello World
+// When a GET request is made to the root path: '/' reply with index UI
 app.get('/', function(request, response) {
-  res.sendFile(path.join(__dirname,'/public/index.html'));
+  response.sendFile(path.join(__dirname,'/public/index.html'));
 });
 
 app.get('/:timestamp', function(request, response) {
